@@ -1,6 +1,7 @@
 # FlexGW2.0
 
-系统测环境：centos7.9
+测试环境说明
+OS：centos7.9
 strongswan版本：5.7.2
 openvpn版本：2.4.11
 
