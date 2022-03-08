@@ -111,27 +111,21 @@ rpm -qa | grep openssl
 
 # 安装新版本OpenSSL
 cd /usr/local/src
-wget https://github.com.cnpmjs.org/openssl/openssl/archive/OpenSSL_1_1_1c.tar.gz
-tar zxvf OpenSSL_1_1_1c.tar.gz
-cd openssl-OpenSSL_1_1_1c/
+wget https://www.openssl.org/source/openssl-1.1.1e.tar.gz
+tar zxvf openssl-1.1.1e.tar.gz
+cd openssl-1.1.1e/
 ./config --prefix=/usr/local/openssl
 make
 make install
 
-# 移除老版本
-mv /usr/bin/openssl /tmp/
-mv /usr/include/openssl /tmp/openssl.bak
-ln -s /usr/local/openssl/bin/openssl /usr/bin/openssl
-ln -s /usr/local/openssl/include/openssl /usr/include/openssl
- 
-# 库
-echo "/usr/local/openssl/lib/" >> /etc/ld.so.conf
-ldconfig
-ldd /usr/local/openssl/bin/openssl
-
+# 升级替换
+mv /usr/bin/openssl /usr/bin/openssl.bak
+ln -sf /usr/local/openssl/bin/openssl /usr/bin/openssl
+echo "/usr/local/openssl/lib" >> /etc/ld.so.conf
+ldconfig -v   
 # 查询
 openssl version
-```
+OpenSSL 1.1.1e  17 Mar 2020
 
 ### 拉取代码
 
