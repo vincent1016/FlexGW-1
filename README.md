@@ -1,6 +1,8 @@
-# FlexGW
+# FlexGW2.0
 
-![image](examples/20210927133142.png)
+系统测环境：centos7.9
+strongswan版本：5.7.2
+openvpn版本：2.4.11
 
 ## 介绍
 
